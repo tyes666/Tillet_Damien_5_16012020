@@ -1,0 +1,26 @@
+.container-fluid, .list-group-item {
+    background-color: #f3e9f1;
+}
+.list-group-item {
+    border-style: none;
+    font-size: 14px;
+}
+.list-group {
+    display: flex;
+    align-items: center;
+}
+.articles {
+    object-fit: contain;
+    width:25%;
+      
+}
+.article {
+    border:solid;
+    border-color:#f3e9f1;
+    border-radius: 15px;
+    
+}
+.container a {
+text-decoration:none;
+color:  #955eec;
+}
