@@ -8,6 +8,7 @@ async function getArticles (){
   fetch("http://localhost:3000/api/teddies/"+ productId)
   .then(function(response) {
     return response.json()
+    
       })
       .then(function(articles){
         let container = document.getElementById("tedd");
@@ -67,13 +68,14 @@ async function getArticles (){
           elementBasket.id="panier";
           container.appendChild(elementBasket);
           let addArticle = document.getElementById ("panier");
-          addArticle.addEventListener("click", function addProduct (teddySelected){
+          addArticle.addEventListener("click", function addProduct (){
             function remplissageStockage() {
-              localStorage.setItem("colors", `${articles.colors}`);
-              localStorage.setItem("id", `${articles._id}`);
-              localStorage.setItem("name", `${articles.name}`);
-              localStorage.setItem("price", `${articles.price}`);
-              localStorage.setItem("image", `${articles.imageUrl}`);
+              let teddySelected = JSON.parse(localStorage.getItem("teddySelected"))  ;
+              if (teddySelected === null){
+                teddySelected = [];
+              }
+              let newArticles = teddySelected.push(articles)
+              localStorage.setItem('teddySelected', JSON.stringify(teddySelected));              
             };
             remplissageStockage();
           alert("ajouté au panier")});
@@ -83,7 +85,14 @@ async function getArticles (){
 }
 getArticles();
 
-/*
+/*  
+var fruits = ['Apple', 'Banana'];
+
+console.log(fruits.length);
+
+var newLength = fruits.push('Orange');
+
+
 function addToPanier(teddySelected){
   let panierContent = JSON.parse(localStorage.getItem("panierContent"));
   if (panierContent === null){
