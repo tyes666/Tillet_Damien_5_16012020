@@ -14,8 +14,6 @@
     width:344px;
     height:223px;
     border-radius: 15px 15px 0 0;
-   
-      
 }
 .article {
     border:solid;
@@ -24,7 +22,6 @@
     width:350px;
     padding-left: 0px;
     padding-right: 0px;
-    
 }
 .container a {
 text-decoration:none;
@@ -45,6 +42,52 @@ color:  #955eec;
 footer {
     height: 100px;
     background-color: #f3e9f1;
+}
+.ours {
+   
+    border-radius: 15px;
+    width:400px;
+    padding-left: 0;
+    padding-right: 0;
+
+}
+.imgours {
+    object-fit: cover;
+    width:400px;
+    border-radius: 15px;
     
-    
+}
+#tedd {
+    justify-content: center;
+}
+.description {
+    width:400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+#container {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+.card {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.choice {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.total {
+    display: flex;
+    flex-direction: flex-end;
+}
+h1, h2 {
+    text-align: center;
+}
+.enonce {
+    margin-bottom: 10px;
 }
