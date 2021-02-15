@@ -1,3 +1,6 @@
+let teddySelected = JSON.parse(localStorage.getItem("teddySelected"));
+console.log(teddySelected);
+
 let container = document.getElementById("tedd");
 let elementDiv = document.createElement("div");
 elementDiv.id="resume";
@@ -6,10 +9,10 @@ container.appendChild(elementDiv);
 
 let containerImg = document.getElementById("resume");
 let oursImg = document.createElement("img");
-let image = localStorage.getItem("image");
+let image = localStorage.getItem("teddySelected");
 oursImg.id="oursImg";
 oursImg.classList.add("articlepanier","col-2");
-oursImg.src = `${image}`;
+oursImg.src = (teddySelected.name);
 containerImg.appendChild(oursImg);
 
 let oursResume = document.createElement("div");
