@@ -52,7 +52,7 @@ async function getArticles (){
         })
         .then(function(articles){
           let container = document.getElementById("description");
-          let elementChoice = document.createElement("button");
+          let elementChoice = document.createElement("ul");
           elementChoice.classList.add("btn","description","btn-primary");
           elementChoice.textContent = "Couleur"; 
           elementChoice.id="colorchoice";
@@ -60,6 +60,8 @@ async function getArticles (){
           return articles;
 
         })
+
+
         .then(function(articles){
           let container = document.getElementById("description");
           let elementBasket = document.createElement("button");
@@ -91,20 +93,6 @@ var fruits = ['Apple', 'Banana'];
 console.log(fruits.length);
 
 var newLength = fruits.push('Orange');
-
-
-function addToPanier(teddySelected){
-  let panierContent = JSON.parse(localStorage.getItem("panierContent"));
-  if (panierContent === null){
-    panierContent = [];
-  }
-  let product = new product(id, teddySelected);
-panierContent.push(product);
-localStorage.setItem("panierContent", JSON.stringify(panierContent));
-}
-
-
-
 
 
 function menuCouleurs() {
