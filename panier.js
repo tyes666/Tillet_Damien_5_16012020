@@ -115,15 +115,6 @@ let adresseUser = document.createElement("input");
 adresseUser.id="adresseUser"
 container.appendChild(adresseUser);
 
-let cpText = document.createElement("label")
-cpText.classList.add("userCp","formulaire")
-cpText.textContent = "Veuillez entrer votre code postal";
-container.appendChild(cpText);
-
-let cpUser = document.createElement("input");
-cpUser.id="cpUser";
-container.appendChild(cpUser);
-
 let villeText = document.createElement("label")
 villeText.classList.add("userVille","formulaire")
 villeText.textContent = "Veuillez entrer votre ville";
@@ -151,28 +142,22 @@ buttonCommand.textContent ="Commander";
 container.appendChild(buttonCommand);
 
 
-
-
-let contact = {
-    
-    userName : document.getElementById("nameUser").value,
-    userFirstName: document.getElementById("firstNameUser").value,
-    userAddress: document.getElementById("adresseUser").value,
-    userCp: document.getElementById("cpUser").value,
-    userVille: document.getElementById("userVille").value,
-    userMail: document.getElementById("userMail").value,
-  };
  
 let sendCommand = document.getElementById("btn-envoi");
 sendCommand.addEventListener("click", function addUser (){
-    function remplissageUser() {
-      
-      localStorage.setItem("contact", JSON.stringify(contact));              
-    };
-    remplissageUser();
-  });
+  let contact = {
+    
+    firstName : document.getElementById("nameUser").value,
+    lastName: document.getElementById("firstNameUser").value,
+    address: document.getElementById("adresseUser").value,   
+    city: document.getElementById("userVille").value,
+    email: document.getElementById("userMail").value,
+  };
+          localStorage.setItem("contact", JSON.stringify(contact)); 
+           console.log(contact)            
+});
 
-  console.log(contact)
+
   
 
 
