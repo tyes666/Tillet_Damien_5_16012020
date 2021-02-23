@@ -1,5 +1,3 @@
-
-
 let teddySelected = JSON.parse(localStorage.getItem("teddySelected"));
 
 let container = document.getElementById("tedd");
@@ -8,13 +6,14 @@ elementDiv.id="resume";
 elementDiv.classList.add("card");
 container.appendChild(elementDiv);
 
-for (let i=0; i<teddySelected.length; i++){
-
-
 let contenant = document.getElementById("resume");
 let contenantProduct = document.createElement("div");
 contenant.appendChild(contenantProduct);
 
+
+for (let i=0; i<teddySelected.length; i++){
+
+  
 let resume = document.getElementById("resume");
 let oursImg = document.createElement("img");
 let image = localStorage.getItem('imageUrl');
@@ -28,15 +27,12 @@ let oursResume = document.createElement("div");
 oursResume.classList.add("oursResume","col-2");
 contenant.appendChild(oursResume);
 
-   
 let containerProduct = document.getElementsByClassName("oursResume");
 let oursName = document.createElement("div");
 let name = localStorage.getItem("name");
 oursName.classList.add("name");
 oursName.textContent = teddySelected[i].name;
 oursResume.appendChild(oursName);
-
-
 
 let containerPrice = document.getElementById("resume");
 let oursPrice = document.createElement("div");
@@ -45,30 +41,6 @@ oursPrice.classList.add("col-2")
 oursPrice.id="price";
 oursPrice.textContent = teddySelected[i].price / 100 + " €uros";
 containerPrice.appendChild(oursPrice);
-
-let countEl = document.getElementById("count");
-function plus(){
-oursQte.value ++;
-countEl.value = oursQte;
-}
-function minus(){
-if (oursQte => 0) {
-oursQte.value --;
-countEl.value = oursQte;
-}
-}
-
-let oursMinus = document.createElement("input");
-oursMinus.value= "-";
-oursMinus.type= "button";
-oursMinus.addEventListener("click", minus);
-contenant.appendChild(oursMinus)
-
-let oursPlus = document.createElement("input");
-oursPlus.value= "+";
-oursPlus.type= "button";
-oursPlus.addEventListener("click", plus);
-contenant.appendChild(oursPlus)
 
 let oursQte = document.createElement("input");
 oursQte.id="count";
@@ -114,7 +86,7 @@ container.appendChild(adresseText);
 let adresseUser = document.createElement("input");
 adresseUser.id="adresseUser"
 container.appendChild(adresseUser);
-
+ 
 let villeText = document.createElement("label")
 villeText.classList.add("userVille","formulaire")
 villeText.textContent = "Veuillez entrer votre ville";
@@ -163,6 +135,30 @@ sendCommand.addEventListener("click", function addUser (){
 
   
 /*
+
+let countEl = document.getElementById("count");
+function plus(){
+oursQte.value ++;
+countEl.value = oursQte;
+}
+function minus(){
+if (oursQte => 0) {
+oursQte.value --;
+countEl.value = oursQte;
+}
+}
+
+let oursMinus = document.createElement("input");
+oursMinus.value= "-";
+oursMinus.type= "button";
+oursMinus.addEventListener("click", minus);
+contenant.appendChild(oursMinus)
+
+let oursPlus = document.createElement("input");
+oursPlus.value= "+";
+oursPlus.type= "button";
+oursPlus.addEventListener("click", plus);
+contenant.appendChild(oursPlus)
 
 
 
