@@ -1,5 +1,3 @@
-
-
 let search = new URLSearchParams(window.location.search);
 let productId = search.get("id");
 
